@@ -21,11 +21,10 @@ export function Footer() {
 export function AltFooter() {
   return (
     <div
-      className="flex w-full flex-col items-center justify-center pt-8 sm:pt-8 lg:px-8 lg:pt-8"
+      className="mt-20 flex w-full flex-col items-center justify-center pt-8 sm:pt-8 lg:px-8 lg:pt-8"
       aria-labelledby="footer-heading"
     >
       <div className="flex flex-row items-center justify-center">
-        {console.log(brev)}
         <Image
           // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
           src={brev.src}
@@ -53,7 +52,9 @@ export function AltFooter() {
         />
       </div>
       <p className="text-sm leading-6 text-gray-600">
-        {/* Built by Brev & Roboflow in San Francisco 🌁 */}
+        <div className=" h-full w-full text-center text-white">
+          ENDLESS AI SUMMER ™️ • INTENSELY NON-REMOTE IN SAN FRANCISCO
+        </div>
       </p>
     </div>
   )

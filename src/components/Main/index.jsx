@@ -18,7 +18,6 @@ const Main = () => {
 
           <div className="mt-4 flex h-[100%] w-[100%] flex-row">
             <div className="mr-1 flex w-[50%] flex-col text-center">
-              <br />
               <h1 className="text-left text-5xl font-bold text-white">
                 Monthly hackathons, beach bonfires, AI/ML office hours.{' '}
               </h1>
@@ -81,9 +80,6 @@ const Main = () => {
             >
               <August />
             </div>
-          </div>
-          <div className="mt-10 h-full w-full text-right text-white">
-            ENDLESS AI SUMMER ™️ • INTENSELY NON-REMOTE IN SAN FRANCISCO
           </div>
         </div>
         <AltFooter />
