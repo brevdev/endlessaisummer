@@ -3,7 +3,40 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(0.43deg, #f7941d 15.43%, #ed0282 99.64%);
+  background: linear-gradient(0.43deg, #ed0282 0.39%, #f7941d 76.43%);
+  /* background: linear-gradient(0.43deg, #f7941d 15.43%, #ed0282 99.64%); */
+  /* background: linear-gradient(0.43deg, #ed0282 15.43%, #f7941d 99.64%); */
   width: 100%;
   height: 100%;
+}
+
+.calendar-box {
+  width: 1028.23px;
+  height: 1030px;
+  left: 59px;
+  top: 294px;
+
+  background: radial-gradient(
+      107.17% 107.17% at 0% 0%,
+      rgba(237, 2, 130, 0.2) 98.2%,
+      rgba(255, 255, 255, 0) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  backdrop-filter: blur(49.387px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 94.0705px;
+}
+
+.summertxt {
+  /* font-family: monospace;
+  font-family: 'Courier New', Courier, monospace; */
+  font-style: normal;
+  /* font-weight: 700; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* color: #ff0000; */
+
+  /* text-shadow: -1px 5px 5.77778px #000000; */
 }

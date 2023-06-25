@@ -1,12 +1,17 @@
 import React from 'react'
 import { AltFooter } from '../Footer'
+import { June } from '@/components/calendars/June'
+import { July } from '@/components/calendars/July'
+import { August } from '@/components/calendars/August'
 
 const Main = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <div className="margin-auto pt-8">
-          <h1 className="text-6xl font-bold text-white">Endless AI Summer</h1>
+          <h1 className="summertxt text-6xl font-bold text-white">
+            Endless AI Summer
+          </h1>
           {/* Import an image from this folder */}
           {/* <img
             src={oldApple}
@@ -20,22 +25,16 @@ const Main = () => {
               </h1>
               <p className="mt-4 text-left text-lg text-white"></p>
             </div>
-            <div className="ml-1 w-[50%]">
-              <div className="flex flex-col">
-                {/* <img
-                  src={qrCode}
-                  alt="Lost Empires"
-                  className="mt-[10%] w-[100%]"
-                /> */}
-                <span
-                  className="cursor-pointer text-center font-bold text-cyan-500"
-                  onClick={() =>
-                    window.open('https://forms.gle/4ZsMfAyKxTUDfCPaA')
-                  }
-                >
-                  scan to request an invite
-                </span>
-              </div>
+          </div>
+          <div className="flex w-[100vw] flex-row items-center justify-start">
+            <div className="w-1/4">
+              <June />
+            </div>
+            <div className="ml-4 w-1/4">
+              <July />
+            </div>
+            <div className="ml-4 w-1/4">
+              <August />
             </div>
           </div>
           <div className="mt-10 h-full w-full text-right text-white">
