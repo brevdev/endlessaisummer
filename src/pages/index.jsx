@@ -38,7 +38,7 @@ export default function Home() {
         />
         <meta itemProp="image" content="/thumbnail.png" />
       </Head>
-      <main className="bg-black">
+      <main className="gradient">
         <Main />
       </main>
     </>

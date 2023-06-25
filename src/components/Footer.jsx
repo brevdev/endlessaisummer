@@ -1,5 +1,8 @@
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
+import celo from '@/images/celo.png'
+import brev from '@/images/logo_dark_mode.png'
+import Image from 'next/image'
 
 export function Footer() {
   return (
@@ -12,5 +15,46 @@ export function Footer() {
         </p>
       </Container>
     </footer>
+  )
+}
+
+export function AltFooter() {
+  return (
+    <div
+      className="flex w-full flex-col items-center justify-center pt-8 sm:pt-8 lg:px-8 lg:pt-8"
+      aria-labelledby="footer-heading"
+    >
+      <div className="flex flex-row items-center justify-center">
+        {console.log(brev)}
+        <Image
+          // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
+          src={brev.src}
+          alt=""
+          width={50}
+          height={50}
+          priority
+          unoptimized
+        />
+        <p className="mx-1 mt-2 text-white">• </p>
+        <a href="https://metaphor.systems" target="_blank" rel="no_referrer">
+          <p className="font-ibm-plex-mono mx-1 mb-2 mt-2 text-2xl text-white">
+            Metaphor
+          </p>
+        </a>
+        <p className="mx-1 mt-2 text-white">• </p>
+        <Image
+          // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
+          src={celo.src}
+          alt=""
+          width={50}
+          height={50}
+          priority
+          unoptimized
+        />
+      </div>
+      <p className="text-sm leading-6 text-gray-600">
+        {/* Built by Brev & Roboflow in San Francisco 🌁 */}
+      </p>
+    </div>
   )
 }
