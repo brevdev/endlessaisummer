@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AltFooter } from '../Footer'
 import { June } from '@/components/calendars/June'
 import { July } from '@/components/calendars/July'
 import { August } from '@/components/calendars/August'
+import { Itinerary } from './Itinerary'
 
 const Main = () => {
+  const [showItinerary, setShowItinerary] = useState(false)
+  const [activeMonth, setActiveMonth] = useState('june')
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
@@ -15,9 +18,12 @@ const Main = () => {
 
           <div className="mt-4 flex h-[100%] w-[100%] flex-row">
             <div className="mr-1 flex w-[50%] flex-col text-center">
+              <br />
               <h1 className="text-left text-5xl font-bold text-white">
                 Monthly hackathons, beach bonfires, AI/ML office hours.{' '}
               </h1>
+              <br />
+
               {/* <p className="mt-4 text-left text-lg text-white">stuff here</p> */}
             </div>
             <div className="ml-1 w-[50%]">
@@ -27,13 +33,52 @@ const Main = () => {
             </div>
           </div>
           <div className="flex w-[100%] flex-row items-center justify-start">
-            <div className="w-1/3">
+            <Itinerary
+              month={activeMonth}
+              show={showItinerary}
+              onMouseEnter={() => {
+                setShowItinerary(true)
+              }}
+              onMouseLeave={() => {
+                setShowItinerary(false)
+              }}
+            />
+          </div>
+          <div className="flex w-[100%] flex-row items-center justify-start">
+            <div
+              className="w-1/3"
+              onMouseEnter={() => {
+                setActiveMonth('june')
+                setShowItinerary(true)
+              }}
+              onMouseLeave={() => {
+                setShowItinerary(false)
+              }}
+            >
               <June />
             </div>
-            <div className="ml-4 w-1/3">
+            <div
+              className="ml-4 w-1/3"
+              onMouseEnter={() => {
+                setActiveMonth('july')
+                setShowItinerary(true)
+              }}
+              onMouseLeave={() => {
+                setShowItinerary(false)
+              }}
+            >
               <July />
             </div>
-            <div className="ml-4 w-1/3">
+            <div
+              className="ml-4 w-1/3"
+              onMouseEnter={() => {
+                setActiveMonth('august')
+                setShowItinerary(true)
+              }}
+              onMouseLeave={() => {
+                setShowItinerary(false)
+              }}
+            >
               <August />
             </div>
           </div>

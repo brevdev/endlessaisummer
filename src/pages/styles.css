@@ -9,6 +9,11 @@ body {
   width: 100%;
   height: 100%;
 }
+.gradient2 {
+  background: linear-gradient(0.43deg, #ed0282 0.39%, #f7941d 76.43%);
+  /* background: linear-gradient(0.43deg, #ed0282 15.43%, #f7941d 99.64%); */
+  /* background: linear-gradient(0.43deg, #f7941d 15.43%, #ed0282 99.64%); */
+}
 
 .calendar-box {
   width: 1028.23px;
