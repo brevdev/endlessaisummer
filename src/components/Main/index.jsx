@@ -18,7 +18,7 @@ const Main = () => {
               <h1 className="text-left text-5xl font-bold text-white">
                 Monthly hackathons, beach bonfires, AI/ML office hours.{' '}
               </h1>
-              <p className="mt-4 text-left text-lg text-white">stuff here</p>
+              {/* <p className="mt-4 text-left text-lg text-white">stuff here</p> */}
             </div>
             <div className="ml-1 w-[50%]">
               <div className="flex flex-col">
