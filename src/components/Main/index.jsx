@@ -4,12 +4,15 @@ import { June } from '@/components/calendars/June'
 import { July } from '@/components/calendars/July'
 import { August } from '@/components/calendars/August'
 import { Itinerary } from './Itinerary'
+import { AIHeader } from '../Header'
+import { Button } from '../Button'
 
 const Main = () => {
   const [showItinerary, setShowItinerary] = useState(false)
   const [activeMonth, setActiveMonth] = useState('june')
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* <AIHeader /> */}
       <div className="mx-auto max-w-3xl">
         <div className="margin-auto pt-8">
           <h1 className="summertxt text-6xl font-bold text-white">
@@ -80,6 +83,14 @@ const Main = () => {
             >
               <August />
             </div>
+          </div>
+          <div className="mt-5 flex w-full flex-row items-center justify-center">
+            <Button
+              href="https://forms.gle/HGkFjKTdJWYzUw7F6"
+              className={'hover:bg-[#f56f48]'}
+            >
+              Submit an Event 🤙
+            </Button>
           </div>
         </div>
         <AltFooter />

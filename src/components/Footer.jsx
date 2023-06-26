@@ -22,7 +22,7 @@ export function Footer() {
 export function AltFooter() {
   return (
     <div
-      className="mt-20 flex w-full flex-col items-center justify-center pt-8 sm:pt-8 lg:px-8 lg:pt-8"
+      className="mt-10 flex w-full flex-col items-center justify-center pt-8 sm:pt-8 lg:px-8 lg:pt-8"
       aria-labelledby="footer-heading"
     >
       <div className="flex flex-row items-center justify-center">
