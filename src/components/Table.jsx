@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import bonfire from '@/images/events/bonfire.png'
+import showandtell from '@/images/events/showandtell.png'
+import hackathon from '@/images/events/hackathon.png'
 
 const events = [
   {
@@ -10,48 +13,32 @@ const events = [
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
     imageUrl:
       'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
-    imageUrl:
-      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
   {
-    name: 'AI Hack & Tell',
+    name: 'AI/ML Office Hours',
     description:
-      'hack & tell, mostly in AI. (un)finished projects from cool people. Food, too! (thanks roboflow)',
-    date: 'Wednesday, June 28',
-    time: '6:30pm',
-    link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
-    imageUrl:
-      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
+      'come ask questions, get help, or just hang out and chat about AI/ML',
+    date: 'Wednesday, July 5',
+    time: '4:30pm',
+    link: 'https://partiful.com/e/CHgg8IeEO4MNM8Gbf80p',
+    imageUrl: showandtell.src,
   },
   {
-    name: 'AI Hack & Tell',
-    description:
-      'hack & tell, mostly in AI. (un)finished projects from cool people. Food, too! (thanks roboflow)',
-    date: 'Wednesday, June 28',
-    time: '6:30pm',
-    link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
-    imageUrl:
-      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
+    name: 'Beach Bonfire',
+    description: 'come hang out and chat about AI/ML',
+    date: 'Thursday, July 6',
+    time: '8:30pm',
+    link: 'https://partiful.com/e/qz03LwLS6K9heGv6JEJf',
+    imageUrl: bonfire.src,
   },
   {
-    name: 'AI Hack & Tell',
+    name: 'Endless AI Summer Hackathon',
     description:
-      'hack & tell, mostly in AI. (un)finished projects from cool people. Food, too! (thanks roboflow)',
-    date: 'Wednesday, June 28',
+      'come build something epic. free GPUs if you train your own model 🤘',
+    date: 'Saturday, July 29',
     time: '6:30pm',
-    link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
-    imageUrl:
-      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
-  },
-  {
-    name: 'AI Hack & Tell',
-    description:
-      'hack & tell, mostly in AI. (un)finished projects from cool people. Food, too! (thanks roboflow)',
-    date: 'Wednesday, June 28',
-    time: '6:30pm',
-    link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
-    imageUrl:
-      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
+    link: 'https://partiful.com/e/MPUsKQK8iGn6y3kX5aDN',
+    imageUrl: hackathon.src,
   },
 ]
 
