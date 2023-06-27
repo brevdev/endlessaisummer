@@ -138,7 +138,7 @@ export default function Table() {
                   </th>
                   <th
                     scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-white"
+                    className="hidden px-3 py-3.5 text-left text-sm font-semibold text-white sm:table-cell"
                   >
                     Time
                   </th>
@@ -150,7 +150,7 @@ export default function Table() {
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
                       {event.name}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-white">
+                    <td className="hidden whitespace-nowrap px-3 py-4 text-sm text-white sm:table-cell">
                       {`${event.date} • ${event.time}`}
                     </td>
 
