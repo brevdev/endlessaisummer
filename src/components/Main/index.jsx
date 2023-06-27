@@ -7,6 +7,8 @@ import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
 import Table from '../Table'
+import Image from 'next/image'
+import Thumbnail from '@/images/newthumbnail.png'
 
 const text =
   'Monthly hackathons, beach bonfires, AI/ML office hours, show & tells.'
@@ -49,8 +51,24 @@ const Main = () => {
             </div>
             <div className="ml-1 w-[50%]">
               <div className="flex flex-col">
+                {/* <Image
+                  // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
+                  src={Thumbnail.src}
+                  className="mt-2"
+                  alt=""
+                  width={600}
+                  height={600}
+                  priority
+                  unoptimized
+                /> */}
                 <p>next up event goes here...</p>
-                <Table />
+                <ul>
+                  <li>Next Hackathon: July 28</li>
+                  <li>Next Bonfire: July 28</li>
+                  <li>AI/ML Office Hours: July 28</li>
+                  <li>Next Show & Tell: July 28</li>
+                </ul>
+                {/* <Table /> */}
               </div>
             </div>
           </div>
@@ -114,6 +132,7 @@ const Main = () => {
           </div>
         </div>
         <AltFooter />
+        <hr className="my-10" />
         <Table />
       </div>
     </div>
