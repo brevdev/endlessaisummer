@@ -58,7 +58,7 @@ const Main = () => {
               month={activeMonth}
               show={showItinerary}
               onMouseEnter={() => {
-                setShowItinerary(true)
+                // setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -70,7 +70,7 @@ const Main = () => {
               className="w-1/3"
               onMouseEnter={() => {
                 setActiveMonth('june')
-                setShowItinerary(true)
+                // setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -82,7 +82,7 @@ const Main = () => {
               className="ml-4 w-1/3"
               onMouseEnter={() => {
                 setActiveMonth('july')
-                setShowItinerary(true)
+                // setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -94,7 +94,7 @@ const Main = () => {
               className="ml-4 w-1/3"
               onMouseEnter={() => {
                 setActiveMonth('august')
-                setShowItinerary(true)
+                // setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
