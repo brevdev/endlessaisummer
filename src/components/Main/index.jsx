@@ -39,43 +39,18 @@ const Main = () => {
             Endless AI Summer
           </h1>
 
-          <div className="mt-4 flex h-[100%] w-[100%] flex-row">
-            <div className="mr-1 flex w-[50%] flex-col text-center">
+          <div className="mt-4 flex h-[100%] w-[100%] flex-col sm:flex-row">
+            <div className="mr-1 w-full flex-col text-center sm:w-[50%]">
               <SmallerHeader />
-              {/* <h1 className="text-left text-5xl font-bold text-white">
-                Monthly hackathons, beach bonfires, AI/ML office hours, show &
-                tells.{' '}
-              </h1> */}
               <br />
-              {/* <p className="mt-4 text-left text-lg text-white">stuff here</p> */}
             </div>
-            <div className="ml-1 w-[50%]">
+            <div className="ml-1 mt-4 w-full sm:mt-0 sm:w-[50%]">
               <h3 className=" text-right text-xl font-bold text-white">
                 Next Event 👇
               </h3>
               <EventCard />
-              {/* <CondensedEventCard /> */}
 
-              <div className="flex flex-col">
-                {/* <Image
-                  // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
-                  src={Thumbnail.src}
-                  className="mt-2"
-                  alt=""
-                  width={600}
-                  height={600}
-                  priority
-                  unoptimized
-                /> */}
-                {/* <p>next up event goes here...</p>
-                <ul>
-                  <li>Next Hackathon: July 28</li>
-                  <li>Next Bonfire: July 28</li>
-                  <li>AI/ML Office Hours: July 28</li>
-                  <li>Next Show & Tell: July 28</li>
-                </ul> */}
-                {/* <Table /> */}
-              </div>
+              <div className="flex flex-col"></div>
             </div>
           </div>
           <div className="flex w-[100%] flex-row items-center justify-start">
