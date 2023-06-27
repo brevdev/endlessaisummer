@@ -157,7 +157,9 @@ export default function Table() {
 
                     <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a
-                        href="#"
+                        href={event.link}
+                        target="_blank"
+                        rel="noreferrer"
                         className="flex flex-row text-[#f79122] hover:text-[#f67a3e]"
                       >
                         Go to link
