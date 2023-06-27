@@ -57,15 +57,15 @@ const events = [
 
 export function EventCard() {
   return (
-    <ul
-      role="list"
-      className="mb-10"
-      // className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-    >
+    <ul role="list" className="mb-10">
       {[events[0]].map((event, item) => (
         <li
           key={item}
-          className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
+          className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.4)', // semi-transparent white
+            backdropFilter: 'blur(10px)', // blur the area behind the element
+          }}
         >
           <div className="flex flex-1 flex-col p-8">
             <img
@@ -77,10 +77,10 @@ export function EventCard() {
               {event.name}
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
-              <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">{event.title}</dd>
+              {/* <dt className="sr-only">Title</dt>
+              <dd className="text-sm text-gray-500">{event.title}</dd> */}
               <dt className="sr-only">Description</dt>
-              <dd className="text-sm text-gray-500">{event.description}</dd>
+              <dd className="text-sm text-gray-700">{event.description}</dd>
               <dt className="sr-only">Link</dt>
               <dd className="mt-4 text-sm text-gray-500 ">
                 <a
