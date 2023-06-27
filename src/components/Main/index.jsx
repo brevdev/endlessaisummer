@@ -8,6 +8,23 @@ import { AIHeader } from '../Header'
 import { Button } from '../Button'
 import Table from '../Table'
 
+const text =
+  'Monthly hackathons, beach bonfires, AI/ML office hours, show & tells.'
+
+function SmallerHeader() {
+  const words = text.split(' ')
+
+  return (
+    <h1 className="text-left font-bold text-white">
+      {words.map((word, i) => (
+        <span style={{ fontSize: `${Math.max(20, 50 - i * 2)}px` }} key={i}>
+          {word}{' '}
+        </span>
+      ))}
+    </h1>
+  )
+}
+
 const Main = () => {
   const [showItinerary, setShowItinerary] = useState(false)
   const [activeMonth, setActiveMonth] = useState('june')
@@ -22,11 +39,12 @@ const Main = () => {
 
           <div className="mt-4 flex h-[100%] w-[100%] flex-row">
             <div className="mr-1 flex w-[50%] flex-col text-center">
-              <h1 className="text-left text-5xl font-bold text-white">
-                Monthly hackathons, beach bonfires, AI/ML office hours.{' '}
-              </h1>
+              <SmallerHeader />
+              {/* <h1 className="text-left text-5xl font-bold text-white">
+                Monthly hackathons, beach bonfires, AI/ML office hours, show &
+                tells.{' '}
+              </h1> */}
               <br />
-
               {/* <p className="mt-4 text-left text-lg text-white">stuff here</p> */}
             </div>
             <div className="ml-1 w-[50%]">
@@ -96,6 +114,7 @@ const Main = () => {
           </div>
         </div>
         <AltFooter />
+        <Table />
       </div>
     </div>
   )
