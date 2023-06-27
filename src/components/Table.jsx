@@ -26,7 +26,7 @@ const events = [
   {
     name: 'Beach Bonfire',
     description: 'come hang out and chat about AI/ML',
-    date: 'Thursday, July 6',
+    date: 'Thursday, July 13',
     time: '8:30pm',
     link: 'https://partiful.com/e/qz03LwLS6K9heGv6JEJf',
     imageUrl: bonfire.src,
