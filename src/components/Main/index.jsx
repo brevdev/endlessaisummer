@@ -7,7 +7,7 @@ import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
 import Table, { EventCard } from '../Table'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Thumbnail from '@/images/newthumbnail.png'
 
 const text =
@@ -54,6 +54,7 @@ const Main = () => {
                 Next Event 👇
               </h3>
               <EventCard />
+              {/* <CondensedEventCard /> */}
 
               <div className="flex flex-col">
                 {/* <Image

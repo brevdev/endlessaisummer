@@ -114,6 +114,65 @@ export function EventCard() {
   )
 }
 
+export function CondensedEventCard() {
+  return (
+    <ul role="list" className="mb-10">
+      {[events[0]].map((event, item) => (
+        <li
+          key={item}
+          className="col-span-1 flex flex-row divide-y divide-gray-200 rounded-lg text-center shadow"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.4)', // semi-transparent white
+            backdropFilter: 'blur(10px)', // blur the area behind the element
+          }}
+        >
+          <div className="p-8">
+            <img
+              className="h-32 w-32 flex-shrink-0 rounded-full"
+              src={event.imageUrl}
+              alt=""
+            />
+          </div>
+          <div className="flex flex-1 flex-col p-8">
+            <h3 className="text-sm font-medium text-gray-900">{event.name}</h3>
+            <dl className="mt-1 flex flex-grow flex-col justify-between">
+              {/* <dt className="sr-only">Title</dt>
+              <dd className="text-sm text-gray-500">{event.title}</dd> */}
+              <dt className="sr-only">Description</dt>
+              <dd className="text-sm text-gray-700">{event.description}</dd>
+              <dt className="sr-only">Link</dt>
+              <dd className="mt-4 text-sm text-gray-500 ">
+                <a
+                  href="event.link"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-row items-center justify-center text-cyan-600"
+                >
+                  Link
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="ml-2 h-6 w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+              </dd>
+            </dl>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function Table() {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
@@ -145,7 +204,7 @@ export default function Table() {
               </thead>
               <tbody>
                 {events.map((event, item) => (
-                  <tr key={item}>
+                  <tr key={item} className="border-b border-white">
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
                       {event.name}
                     </td>
