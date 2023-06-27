@@ -6,6 +6,7 @@ import { August } from '@/components/calendars/August'
 import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
+import Table from '../Table'
 
 const Main = () => {
   const [showItinerary, setShowItinerary] = useState(false)
@@ -31,6 +32,7 @@ const Main = () => {
             <div className="ml-1 w-[50%]">
               <div className="flex flex-col">
                 <p>next up event goes here...</p>
+                <Table />
               </div>
             </div>
           </div>
