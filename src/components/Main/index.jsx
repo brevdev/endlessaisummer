@@ -6,7 +6,7 @@ import { August } from '@/components/calendars/August'
 import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
-import Table from '../Table'
+import Table, { EventCard } from '../Table'
 import Image from 'next/image'
 import Thumbnail from '@/images/newthumbnail.png'
 
@@ -50,6 +50,11 @@ const Main = () => {
               {/* <p className="mt-4 text-left text-lg text-white">stuff here</p> */}
             </div>
             <div className="ml-1 w-[50%]">
+              <h3 className=" text-right text-xl font-bold text-white">
+                Next Event 👇
+              </h3>
+              <EventCard />
+
               <div className="flex flex-col">
                 {/* <Image
                   // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
@@ -61,13 +66,13 @@ const Main = () => {
                   priority
                   unoptimized
                 /> */}
-                <p>next up event goes here...</p>
+                {/* <p>next up event goes here...</p>
                 <ul>
                   <li>Next Hackathon: July 28</li>
                   <li>Next Bonfire: July 28</li>
                   <li>AI/ML Office Hours: July 28</li>
                   <li>Next Show & Tell: July 28</li>
-                </ul>
+                </ul> */}
                 {/* <Table /> */}
               </div>
             </div>

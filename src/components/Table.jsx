@@ -8,6 +8,10 @@ const events = [
     date: 'Wednesday, June 28',
     time: '6:30pm',
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
   {
     name: 'AI Hack & Tell',
@@ -16,6 +20,8 @@ const events = [
     date: 'Wednesday, June 28',
     time: '6:30pm',
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
   {
     name: 'AI Hack & Tell',
@@ -24,6 +30,8 @@ const events = [
     date: 'Wednesday, June 28',
     time: '6:30pm',
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
   {
     name: 'AI Hack & Tell',
@@ -32,6 +40,8 @@ const events = [
     date: 'Wednesday, June 28',
     time: '6:30pm',
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
   {
     name: 'AI Hack & Tell',
@@ -40,8 +50,69 @@ const events = [
     date: 'Wednesday, June 28',
     time: '6:30pm',
     link: 'https://partiful.com/e/ZfhNESAwDjRQp9QINPa2',
+    imageUrl:
+      'https://ik.imagekit.io/partiful/tr:f-auto,fo-auto,pr-true,w-920,dpr-auto/user/nxKjkOBrxng9Am9mIN8zI8Ucx8y1/e8CMjiGRAl67lLPw5BM2H',
   },
 ]
+
+export function EventCard() {
+  return (
+    <ul
+      role="list"
+      className="mb-10"
+      // className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
+      {[events[0]].map((event, item) => (
+        <li
+          key={item}
+          className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
+        >
+          <div className="flex flex-1 flex-col p-8">
+            <img
+              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+              src={event.imageUrl}
+              alt=""
+            />
+            <h3 className="mt-6 text-sm font-medium text-gray-900">
+              {event.name}
+            </h3>
+            <dl className="mt-1 flex flex-grow flex-col justify-between">
+              <dt className="sr-only">Title</dt>
+              <dd className="text-sm text-gray-500">{event.title}</dd>
+              <dt className="sr-only">Description</dt>
+              <dd className="text-sm text-gray-500">{event.description}</dd>
+              <dt className="sr-only">Link</dt>
+              <dd className="mt-4 text-sm text-gray-500 ">
+                <a
+                  href="event.link"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex flex-row items-center justify-center text-cyan-600"
+                >
+                  Link
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="ml-2 h-6 w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+              </dd>
+            </dl>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function Table() {
   return (
