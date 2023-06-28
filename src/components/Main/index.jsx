@@ -29,7 +29,7 @@ function SmallerHeader() {
 
 const Main = () => {
   const [showItinerary, setShowItinerary] = useState(false)
-  const [activeMonth, setActiveMonth] = useState('june')
+  const [activeMonth, setActiveMonth] = useState('June')
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* <AIHeader /> */}
@@ -58,7 +58,7 @@ const Main = () => {
               month={activeMonth}
               show={showItinerary}
               onMouseEnter={() => {
-                // setShowItinerary(true)
+                setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -69,8 +69,8 @@ const Main = () => {
             <div
               className="w-1/3"
               onMouseEnter={() => {
-                setActiveMonth('june')
-                // setShowItinerary(true)
+                setActiveMonth('June')
+                setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -81,8 +81,8 @@ const Main = () => {
             <div
               className="ml-4 w-1/3"
               onMouseEnter={() => {
-                setActiveMonth('july')
-                // setShowItinerary(true)
+                setActiveMonth('July')
+                setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)
@@ -93,8 +93,8 @@ const Main = () => {
             <div
               className="ml-4 w-1/3"
               onMouseEnter={() => {
-                setActiveMonth('august')
-                // setShowItinerary(true)
+                setActiveMonth('August')
+                setShowItinerary(true)
               }}
               onMouseLeave={() => {
                 setShowItinerary(false)

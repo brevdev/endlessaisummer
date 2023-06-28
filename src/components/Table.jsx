@@ -4,7 +4,7 @@ import showandtell from '@/images/events/showandtell.png'
 import hackathon from '@/images/events/hackathon.png'
 import { DiamondIcon } from '@/components/DiamondIcon'
 
-const events = [
+export const events = [
   {
     name: 'AI Hack & Tell',
     description:
@@ -121,6 +121,51 @@ export function EventCard() {
         </li>
       ))}
     </ul>
+  )
+}
+
+export const PreviewEventCard = ({ event }) => {
+  return (
+    <li
+      className="col-span-1 flex cursor-pointer divide-y divide-gray-200 rounded-lg text-left shadow"
+      style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.4)', // semi-transparent white
+        backdropFilter: 'blur(10px)', // blur the area behind the element
+      }}
+      onClick={() => window.open(event.link, '_blank')}
+    >
+      <img
+        className="m-4 h-20 w-20 flex-shrink-0 rounded-full"
+        src={event.imageUrl}
+        alt=""
+      />
+      <div className="flex-1 p-4">
+        <h3 className="flex items-center text-sm font-medium text-gray-900">
+          {event.name}{' '}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mb-1 ml-2 h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+            />
+          </svg>
+        </h3>
+        <p>
+          <time dateTime="2022-04-06">{event.date}</time>
+        </p>
+        <dl className="mt-2">
+          <dt className="sr-only">Description</dt>
+          <dd className="text-sm text-gray-700">{event.description}</dd>
+        </dl>
+      </div>
+    </li>
   )
 }
 
