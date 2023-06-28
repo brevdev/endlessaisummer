@@ -95,7 +95,10 @@ export function AltFooter() {
           <span
             className="cursor-pointer underline"
             onClick={() => {
-              window.open('https://www.trychroma.com/', '_blank')
+              window.open(
+                'https://github.com/brevdev/endlessaisummer',
+                '_blank'
+              )
             }}
           >
             EDIT THIS SITE
