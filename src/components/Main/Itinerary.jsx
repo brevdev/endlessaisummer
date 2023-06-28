@@ -6,31 +6,29 @@ function classNames(...classes) {
 }
 
 export const Itinerary = (props) => {
-  return (
-    <>
-      <div
-        className={classNames(
-          // `gradient2 shadow`,
-          'absolute top-[300px] h-[300px] rounded-2xl px-10 py-10 transition-all duration-300',
-          props.show ? 'visible' : 'hidden'
-        )}
-        onMouseEnter={props.onMouseEnter}
-        onMouseLeave={props.onMouseLeave}
-      >
-        {events.map((event, i) => {
-          if (event.date.includes(props.month)) {
-            return <PreviewEventCard key={i} event={event} />
-          }
-        })}
+  const eventsForMonth = events.filter((event) =>
+    event.date.includes(props.month)
+  )
 
-        {/* <ul>
-          {itinerary[props.month].map((event, i) => (
-            <li
-              key={i}
-            >{`${event.name} • ${event.date} • ${event.location}`}</li>
-          ))}
-        </ul> */}
-      </div>
-    </>
+  return (
+    <div
+      className={classNames(
+        `gradient2 shadow`,
+        'absolute top-[300px] rounded-2xl px-10 py-10 transition-all duration-300',
+        props.show ? 'visible' : 'hidden'
+      )}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+    >
+      {eventsForMonth.length > 0 ? (
+        eventsForMonth.map((event, i) => (
+          <PreviewEventCard key={i} event={event} />
+        ))
+      ) : (
+        <p className="py-4 text-sm text-white">
+          Dates and location are being decided 🫡
+        </p>
+      )}
+    </div>
   )
 }

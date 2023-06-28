@@ -56,7 +56,8 @@ const Main = () => {
           <div className="flex w-[100%] flex-row items-center justify-start">
             <Itinerary
               month={activeMonth}
-              show={showItinerary}
+              show={true}
+              // show={showItinerary}
               onMouseEnter={() => {
                 setShowItinerary(true)
               }}
