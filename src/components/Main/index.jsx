@@ -6,7 +6,7 @@ import { August } from '@/components/calendars/August'
 import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
-import Table, { EventCard } from '../Table'
+import Table, { EventCard, events } from '../DataDisplays'
 // import Image from 'next/image'
 import Thumbnail from '@/images/newthumbnail.png'
 
@@ -48,7 +48,11 @@ const Main = () => {
               <h3 className=" text-right text-xl font-bold text-white">
                 Next Event 👇
               </h3>
-              <EventCard />
+              <ul role="list" className="mb-10">
+                {[events[0]].map((event, item) => (
+                  <EventCard key={item} event={event} />
+                ))}
+              </ul>
 
               <div className="flex flex-col"></div>
             </div>

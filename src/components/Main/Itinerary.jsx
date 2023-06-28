@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { PreviewEventCard, events } from '../Table'
+import { PreviewEventCard, events } from '../DataDisplays'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

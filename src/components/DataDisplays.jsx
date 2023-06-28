@@ -4,6 +4,8 @@ import showandtell from '@/images/events/showandtell.png'
 import hackathon from '@/images/events/hackathon.png'
 import { DiamondIcon } from '@/components/DiamondIcon'
 
+// RIGHT NOW THE EVENTS ARE HARDCODED HERE
+// TODO: MAKE THIS A JSON FILE OR SOMETHING. AIRTABLE?
 export const events = [
   {
     name: 'AI Hack & Tell',
@@ -43,56 +45,54 @@ export const events = [
   },
 ]
 
-export function EventCard() {
+export const EventCard = ({ event, key }) => {
   return (
-    <ul role="list" className="mb-10">
-      {[events[0]].map((event, item) => (
-        <li
-          key={item}
-          className="col-span-1 flex cursor-pointer flex-col divide-y divide-gray-200 rounded-lg text-center shadow"
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.4)', // semi-transparent white
-            backdropFilter: 'blur(10px)', // blur the area behind the element
-          }}
-          onClick={() => window.open(event.link, '_blank')}
-        >
-          <div className="flex flex-1 flex-col p-8">
-            <img
-              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
-              src={event.imageUrl}
-              alt=""
+    <li
+      key={key}
+      className="col-span-1 flex cursor-pointer flex-col divide-y divide-gray-200 rounded-lg text-center shadow"
+      style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.4)', // semi-transparent white
+        backdropFilter: 'blur(10px)', // blur the area behind the element
+      }}
+      onClick={() => window.open(event.link, '_blank')}
+    >
+      <div className="flex flex-1 flex-col p-8">
+        <img
+          className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+          src={event.imageUrl}
+          alt=""
+        />
+        <h3 className="mt-6 flex flex-row items-center justify-center text-sm font-medium text-gray-900">
+          {event.name}{' '}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="mb-1 ml-2 h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
             />
-            <h3 className="mt-6 flex flex-row items-center justify-center text-sm font-medium text-gray-900">
-              {event.name}{' '}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="mb-1 ml-2 h-5 w-5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                />
-              </svg>
-            </h3>
-            <div className="order-first -mx-4 flex flex-auto basis-full overflow-x-auto whitespace-nowrap border-b border-blue-600/10 py-4 font-mono text-sm text-[#ec0d7f] sm:-mx-6 lg:order-none lg:mx-0 lg:basis-auto lg:border-0 lg:py-0">
-              <div className="mx-auto flex items-center gap-4 px-4 font-bold">
-                <p>
-                  <time dateTime="2022-04-06">{event.date}</time>
-                </p>
-              </div>
-            </div>
-            <dl className="mt-1 flex flex-grow flex-col justify-between">
-              {/* <dt className="sr-only">Title</dt>
+          </svg>
+        </h3>
+        <div className="order-first -mx-4 flex flex-auto basis-full overflow-x-auto whitespace-nowrap border-b border-blue-600/10 py-4 font-mono text-sm text-[#ec0d7f] sm:-mx-6 lg:order-none lg:mx-0 lg:basis-auto lg:border-0 lg:py-0">
+          <div className="mx-auto flex items-center gap-4 px-4 font-bold">
+            <p>
+              <time dateTime="2022-04-06">{event.date}</time>
+            </p>
+          </div>
+        </div>
+        <dl className="mt-1 flex flex-grow flex-col justify-between">
+          {/* <dt className="sr-only">Title</dt>
               <dd className="text-sm text-gray-500">{event.title}</dd> */}
-              <dt className="sr-only">Description</dt>
-              <dd className="text-sm text-gray-700">{event.description}</dd>
-              <dt className="sr-only">Link</dt>
-              {/* <dd className="mt-4 text-sm text-gray-500 ">
+          <dt className="sr-only">Description</dt>
+          <dd className="text-sm text-gray-700">{event.description}</dd>
+          <dt className="sr-only">Link</dt>
+          {/* <dd className="mt-4 text-sm text-gray-500 ">
                 <a
                   href="event.link"
                   target="_blank"
@@ -116,11 +116,9 @@ export function EventCard() {
                   </svg>
                 </a>
               </dd> */}
-            </dl>
-          </div>
-        </li>
-      ))}
-    </ul>
+        </dl>
+      </div>
+    </li>
   )
 }
 
