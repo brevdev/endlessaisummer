@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import bonfire from '@/images/events/bonfire.png'
 import showandtell from '@/images/events/showandtell.png'
 import hackathon from '@/images/events/hackathon.png'
+import { DiamondIcon } from '@/components/DiamondIcon'
 
 const events = [
   {
@@ -78,6 +79,13 @@ export function EventCard() {
                 />
               </svg>
             </h3>
+            <div className="order-first -mx-4 flex flex-auto basis-full overflow-x-auto whitespace-nowrap border-b border-blue-600/10 py-4 font-mono text-sm text-[#ec0d7f] sm:-mx-6 lg:order-none lg:mx-0 lg:basis-auto lg:border-0 lg:py-0">
+              <div className="mx-auto flex items-center gap-4 px-4 font-bold">
+                <p>
+                  <time dateTime="2022-04-06">{event.date}</time>
+                </p>
+              </div>
+            </div>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               {/* <dt className="sr-only">Title</dt>
               <dd className="text-sm text-gray-500">{event.title}</dd> */}
