@@ -91,7 +91,15 @@ export function AltFooter() {
       </div>
       <p className="text-sm leading-6 text-gray-600">
         <div className=" h-full w-full text-center text-white">
-          ENDLESS AI SUMMER ™️ • HELLA IN-PERSON IN SAN FRANCISCO
+          ENDLESS AI SUMMER ™️ • HELLA IN-PERSON IN SAN FRANCISCO • 
+          <span
+            className="cursor-pointer underline"
+            onClick={() => {
+              window.open('https://www.trychroma.com/', '_blank')
+            }}
+          >
+            EDIT THIS SITE
+          </span>
         </div>
       </p>
     </div>
