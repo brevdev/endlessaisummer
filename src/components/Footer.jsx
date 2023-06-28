@@ -3,6 +3,7 @@ import { Logo } from '@/components/Logo'
 import celo from '@/images/celo.png'
 import roboflow from '@/images/roboflowwhite.png'
 import brev from '@/images/logo_dark_mode.png'
+import chroma from '@/images/logos/chromalogo.png'
 import Image from 'next/image'
 
 export function Footer() {
@@ -29,6 +30,10 @@ export function AltFooter() {
         <Image
           // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
           src={brev.src}
+          onClick={() => {
+            window.open('https://brev.dev', '_blank')
+          }}
+          className="cursor-pointer"
           alt=""
           width={50}
           height={50}
@@ -39,26 +44,47 @@ export function AltFooter() {
         <Image
           // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
           src={roboflow.src}
-          className="mt-2"
+          onClick={() => {
+            window.open('https://roboflow.com', '_blank')
+          }}
+          className="mt-2 cursor-pointer"
           alt=""
           width={70}
           height={70}
           priority
           unoptimized
         />
-        {/* <a href="https://metaphor.systems" target="_blank" rel="no_referrer">
-          <p className="font-ibm-plex-mono mx-1 mb-2 mt-2 text-2xl text-white">
+        <p className="mx-1 mt-2 text-white">• </p>
+        <a href="https://metaphor.systems" target="_blank" rel="noreferrer">
+          <p className="font-ibm-plex-mono mx-1 mb-2 mt-2 cursor-pointer text-xl text-white">
             Metaphor
           </p>
-        </a> */}
+        </a>
         <p className="mx-1 mt-2 text-white">• </p>
         <Image
           // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
           src={celo.src}
-          className="mt-2"
+          onClick={() => {
+            window.open('https://celo.org', '_blank')
+          }}
+          className="mt-2 cursor-pointer"
           alt=""
           width={50}
           height={50}
+          priority
+          unoptimized
+        />
+        <p className="mx-1 mt-2 text-white">• </p>
+        <Image
+          // className="absolute left-0 top-0 translate-x-[-55%] translate-y-[-10%] -scale-x-100 sm:left-1/2 sm:translate-x-[-98%] sm:translate-y-[-6%] lg:translate-x-[-106%] xl:translate-x-[-122%]"
+          src={chroma.src}
+          onClick={() => {
+            window.open('https://www.trychroma.com/', '_blank')
+          }}
+          className="mt-2 cursor-pointer"
+          alt=""
+          width={75}
+          height={75}
           priority
           unoptimized
         />
