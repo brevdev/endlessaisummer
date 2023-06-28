@@ -10,7 +10,8 @@ export const Itinerary = (props) => {
     <>
       <div
         className={classNames(
-          'gradient2 absolute top-[300px] h-[300px] rounded-2xl px-10 py-10 shadow transition-all duration-300',
+          // `gradient2 shadow`,
+          'absolute top-[300px] h-[300px] rounded-2xl px-10 py-10 transition-all duration-300',
           props.show ? 'visible' : 'hidden'
         )}
         onMouseEnter={props.onMouseEnter}
@@ -18,16 +19,10 @@ export const Itinerary = (props) => {
       >
         {events.map((event, i) => {
           if (event.date.includes(props.month)) {
-            return (
-              <PreviewEventCard
-                key={i}
-                event={event}
-                // onMouseEnter={props.onMouseEnter}
-                // onMouseLeave={props.onMouseLeave}
-              />
-            )
+            return <PreviewEventCard key={i} event={event} />
           }
         })}
+
         {/* <ul>
           {itinerary[props.month].map((event, i) => (
             <li
