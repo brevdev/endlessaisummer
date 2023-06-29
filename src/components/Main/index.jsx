@@ -49,7 +49,7 @@ const Main = () => {
                 Next Event 👇
               </h3>
               <ul role="list" className="mb-10">
-                {[events[0]].map((event, item) => (
+                {[events[1]].map((event, item) => (
                   <EventCard key={item} event={event} />
                 ))}
               </ul>
