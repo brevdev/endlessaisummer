@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AltFooter } from '../Footer'
 import { June } from '@/components/calendars/June'
 import { July } from '@/components/calendars/July'
@@ -6,9 +6,8 @@ import { August } from '@/components/calendars/August'
 import { Itinerary } from './Itinerary'
 import { AIHeader } from '../Header'
 import { Button } from '../Button'
-import Table, { EventCard, events } from '../DataDisplays'
-// import Image from 'next/image'
-import Thumbnail from '@/images/newthumbnail.png'
+import Table, { EventCard } from '../DataDisplays'
+import axios from 'axios'
 
 const text =
   'Monthly hackathons, beach bonfires, AI/ML office hours, show & tells.'
@@ -27,9 +26,52 @@ function SmallerHeader() {
   )
 }
 
-const Main = () => {
+export const Main = () => {
   const [showItinerary, setShowItinerary] = useState(false)
   const [activeMonth, setActiveMonth] = useState('June')
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(
+          'https://api.airtable.com/v0/appCoOEelosJXhxo0/Events',
+          {
+            headers: {
+              Authorization: 'Bearer keyg6PY9UYBh1QfQ4',
+            },
+            params: {
+              filterByFormula: 'approved = 1',
+            },
+          }
+        );
+        setEvents(response.data.records.map(record => {
+          const { fields } = record;
+          return {
+            name: fields.name,
+            description: fields.description,
+            date: fields.date,
+            link: fields.link,
+            imageUrl: fields.imageUrl,
+          };
+        }));
+      } catch (error) {
+        console.error('Error fetching event data:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
+
+  useEffect(() => {
+    console.log("test", events);
+  }, [events]);
+
+  const currentDate = new Date().toISOString().split('T')[0];
+  const sortedEvents = events.sort((a, b) => {
+    return a.date > b.date ? 1 : -1;
+  });
+  const nextEvent = sortedEvents.find((event) => event.date > currentDate);
+
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* <AIHeader /> */}
@@ -49,16 +91,16 @@ const Main = () => {
                 Next Event 👇
               </h3>
               <ul role="list" className="mb-10">
-                {[events[1]].map((event, item) => (
-                  <EventCard key={item} event={event} />
-                ))}
+                {nextEvent && (
+                  <EventCard key={nextEvent.id} event={nextEvent} />
+                )}
               </ul>
-
               <div className="flex flex-col"></div>
             </div>
           </div>
           <div className="flex w-[100%] flex-row items-center justify-start">
             <Itinerary
+              events={events}
               month={activeMonth}
               show={showItinerary}
               onMouseEnter={() => {
@@ -109,7 +151,7 @@ const Main = () => {
           </div>
           <div className="mt-5 flex w-full flex-row items-center justify-center">
             <Button
-              href="https://forms.gle/HGkFjKTdJWYzUw7F6"
+              href="https://airtable.com/shrTtrBUABL5Tk4Q4"
               className={'hover:bg-[#f56f48]'}
             >
               Submit an Event 🤙
@@ -118,7 +160,7 @@ const Main = () => {
         </div>
         <AltFooter />
         <hr className="my-10" />
-        <Table />
+        <Table events={events}/>
       </div>
     </div>
   )

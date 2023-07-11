@@ -41,7 +41,7 @@ export function AIHeader() {
             <DiamondIcon className="h-1.5 w-1.5 overflow-visible fill-current stroke-current" />
           </div> */}
           <div className="flex w-full flex-row items-center justify-end">
-            <Button href="https://forms.gle/HGkFjKTdJWYzUw7F6">
+            <Button href="https://airtable.com/shrTtrBUABL5Tk4Q4">
               Submit an Event!
             </Button>
           </div>
