@@ -50,28 +50,23 @@ export const Main = () => {
           return {
             name: fields.name,
             description: fields.description,
-            date: fields.date,
+            date: new Date(fields.date),
             link: fields.link,
             imageUrl: fields.imageUrl,
           };
-        }));
+        }).sort((a, b) => a.date - b.date));
       } catch (error) {
         console.error('Error fetching event data:', error);
-      }
+      } 
     };
     fetchEvents();
   }, []);
 
-  useEffect(() => {
-    console.log("test", events);
-  }, [events]);
-
-  const currentDate = new Date().toISOString().split('T')[0];
-  const sortedEvents = events.sort((a, b) => {
-    return a.date > b.date ? 1 : -1;
-  });
-  const nextEvent = sortedEvents.find((event) => event.date > currentDate);
-
+  const pastEvents = events.filter(event => event.date < new Date());
+  const futureEvents = events.filter(event => event.date >= new Date());
+  const currentDate = new Date();
+  const nextEvent = events.find((event) => event.date > currentDate);
+  
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       {/* <AIHeader /> */}
@@ -160,7 +155,8 @@ export const Main = () => {
         </div>
         <AltFooter />
         <hr className="my-10" />
-        <Table events={events}/>
+        <Table events={futureEvents} header="Upcoming Events"/>
+        <Table events={pastEvents} header="Past Events"/>
       </div>
     </div>
   )

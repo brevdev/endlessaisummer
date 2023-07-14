@@ -116,7 +116,7 @@ const Table = (props) => {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <h1 className="text-base font-semibold leading-6 text-white">
-        All Events
+        {props.header || "All Events"}
       </h1>
       <div className="flow-root">
         <div className="inline-block min-w-full sm:px-6 lg:px-8">
