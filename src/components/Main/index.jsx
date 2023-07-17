@@ -156,6 +156,7 @@ export const Main = () => {
         <AltFooter />
         <hr className="my-10" />
         <Table events={futureEvents} header="Upcoming Events"/>
+        <div style={{ margin: '40px 0' }} /> {/* Adjust '20px' to your desired space */}
         <Table events={pastEvents} header="Past Events"/>
       </div>
     </div>
